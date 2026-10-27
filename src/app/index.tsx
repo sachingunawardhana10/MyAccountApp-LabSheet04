@@ -11,6 +11,10 @@ export default function RegistrationScreen() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  // handleReview function checks if all fields are filled and if passwords match
+  // before navigating to the Review screen.
+  // It uses Alert to show error messages if validation fails.
+
   const handleReview = () => {
     if (!userName || !email || !phoneNumber || !password || !confirmPassword) {
       Alert.alert("Error", "Please fill in all fields.");
@@ -31,6 +35,11 @@ export default function RegistrationScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Create Your Account</Text>
+
+      {/* Placeholder is used to show a hint to the user */}
+      {/* onChangeText updates the state when the user types */}
+      {/* keyboardType specifies the type of keyboard */}
+      {/* secureTextEntry hides password input */}
 
       <TextInput
         style={styles.input}

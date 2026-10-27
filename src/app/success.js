@@ -7,9 +7,7 @@ export default function SuccessScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.emoji}>✅</Text>
-
       <Text style={styles.greeting}>Hello, {userName}!</Text>
-
       <Text style={styles.subtitle}>
         Your account has been successfully created.
       </Text>

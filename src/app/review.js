@@ -4,6 +4,7 @@ import { Button, StyleSheet, Text, View } from "react-native";
 export default function ReviewScreen() {
   const router = useRouter();
 
+  // Extract parameters passed from the previous screen
   const { userName, email, phoneNumber } = useLocalSearchParams();
 
   const handleConfirm = () => {
@@ -26,6 +27,9 @@ export default function ReviewScreen() {
       </View>
 
       <View style={styles.buttonContainer}>
+        {/* router.back() pops this screen from the stack,
+            returning to the previous screen's preserved state */}
+
         <Button title="Edit Info" color="red" onPress={() => router.back()} />
 
         <Button title="Confirm & Submit" onPress={handleConfirm} />
@@ -59,6 +63,5 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    gap: 10,
   },
 });
